@@ -177,7 +177,7 @@ namespace XamlRichMenuMaker
 
         private async Task CreateRichMenuAsync()
         {
-            var menu = RichMenus[0];
+            var menu = SelectedRichMenu ?? RichMenus[0];
             var jsonString = JsonConvert.SerializeObject(menu, _jsonSerializerSettings);
 
             var menuId = await _line.CreateRichMenuAsync(menu);

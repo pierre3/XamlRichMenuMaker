@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27428.2037
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamlLineRichMenuEditor", "XamlLineRichMenuEditor\XamlLineRichMenuEditor.csproj", "{7870E684-1C50-4D20-BBC8-9295AA9D7DDA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamlRichMenuMaker", "XamlRichMenuMaker\XamlRichMenuMaker.csproj", "{7870E684-1C50-4D20-BBC8-9295AA9D7DDA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

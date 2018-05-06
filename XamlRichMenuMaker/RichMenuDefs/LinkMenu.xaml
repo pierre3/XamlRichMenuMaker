@@ -17,7 +17,7 @@
                   Height="{StaticResource RichMenuShortHeight}" >
 
         <!-- Rich Menu Definitions -->
-        <Grid x:Name="menu_body" Background="White">
+        <Grid x:Name="menu_body" Background="#FFF0F0F0">
             <local:RichMenuProperties.Settings>
                 <local:RichMenuSettings Name="accountLinkMenu" ChatBarText="サービス連携" Selected="True"/>
             </local:RichMenuProperties.Settings>
@@ -31,12 +31,12 @@
             <Rectangle x:Name="area_1"
                     Stroke="DarkGray" StrokeThickness="4">
                 <local:RichMenuProperties.Action>
-                    <local:RichMenuAction Type="Postback" Label="Account Link" Data="account link"/>
+                    <local:RichMenuAction Type="Postback" Label="Account Link" Data="account link" Text="アカウント連携"/>
                 </local:RichMenuProperties.Action>
             </Rectangle>
             <Image Source="../Resources/link.png"
                        VerticalAlignment="Top"
-                       Margin="0,80,0,0" Width="512" Height="512"/>
+                       Margin="0,150,0,0" Width="420" Height="420"/>
             <TextBlock Margin="0,0,0,80" VerticalAlignment="Bottom" 
                            HorizontalAlignment="Center" 
                            FontSize="80">
@@ -52,7 +52,7 @@
             </Rectangle>
             <Image Grid.Column="1"  Source="../Resources/web.png"
                        VerticalAlignment="Top"
-                       Margin="0,80,0,0" Width="512" Height="512"/>
+                       Margin="236.333,180,237,0" Width="360" Height="360"/>
             <TextBlock Grid.Column="1" Margin="0,0,0,80" VerticalAlignment="Bottom" 
                            HorizontalAlignment="Center" 
                            FontSize="80">Webサイト

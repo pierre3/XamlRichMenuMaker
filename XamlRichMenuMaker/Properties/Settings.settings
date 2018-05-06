@@ -3,11 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="ChannelAccessToken" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">zd1O6SNqTN8duuo14Zu/zGzJ6LZkpB8aENmUhc45T1b3wQHqESRPJI81Y3MKWO1xD9OclfSRx5gYgRhMmvmcG/ytzsnOb4SanJL4jLxJtZvXxKpvs6G7nAQywXkJl6XT8ytN5xWqyGDUWvsph0nxIQdB04t89/1O/w1cDnyilFU=
-</Value>
+      <Value Profile="(Default)">Set the channel access token</Value>
     </Setting>
     <Setting Name="UserId" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">U28aa279ed62b3e495b0f9d88f5a4afc2</Value>
+      <Value Profile="(Default)">Set the debug user ID</Value>
     </Setting>
   </Settings>
 </SettingsFile>

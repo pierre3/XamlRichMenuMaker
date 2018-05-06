@@ -17,7 +17,7 @@
                   Height="{StaticResource RichMenuShortHeight}" >
 
         <!-- Rich Menu Definitions -->
-        <Grid x:Name="menu_body" Background="White">
+        <Grid x:Name="menu_body" Background="LightGray">
             <local:RichMenuProperties.Settings>
                 <local:RichMenuSettings Name="UnlinkMenu" ChatBarText="サービス連携" Selected="True"/>
             </local:RichMenuProperties.Settings>
@@ -37,7 +37,7 @@
             </Rectangle>
             <Image Grid.Column="0"  Source="../Resources/userinfo.png"
                        VerticalAlignment="Top"
-                       Margin="0,80,0,0" Width="512" Height="512"/>
+                       Margin="0,150,0,0" Width="420" Height="420"/>
             <TextBlock Grid.Column="0"  Margin="0,0,0,80" VerticalAlignment="Bottom" 
                            HorizontalAlignment="Center" 
                            FontSize="80">
@@ -53,8 +53,8 @@
             </Rectangle>
             <Image Grid.Column="1" Source="../Resources/unlink.png"
                        VerticalAlignment="Top"
-                       Margin="0,80,0,0" Width="512" Height="512"/>
-            <TextBlock Grid.Column="1" Margin="0,0,0,80" VerticalAlignment="Bottom" 
+                       Margin="153,200,152.333,0" Width="320" Height="320"/>
+            <TextBlock Grid.Column="1" Margin="0,0,0,90" VerticalAlignment="Bottom" 
                            HorizontalAlignment="Center" 
                            FontSize="60">
                     アカウント連携解除
@@ -69,7 +69,7 @@
             </Rectangle>
             <Image Grid.Column="2"  Source="../Resources/web.png"
                        VerticalAlignment="Top"
-                       Margin="0,80,0,0" Width="512" Height="512"/>
+                       Margin="152.667,200,152,0" Width="320" Height="320"/>
             <TextBlock Grid.Column="2" Margin="0,0,0,80" VerticalAlignment="Bottom" 
                            HorizontalAlignment="Center" 
                            FontSize="80">Webサイト

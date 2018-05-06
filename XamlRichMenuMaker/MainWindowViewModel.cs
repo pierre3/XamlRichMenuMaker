@@ -44,10 +44,10 @@ namespace XamlRichMenuMaker
             {
                 SetProperty(ref _selectedRichMenu, value);
                 SelectedRichMenuJson = JsonConvert.SerializeObject(SelectedRichMenu, _jsonSerializerSettings);
-                RaiseCanExecuteChanged();   
+                RaiseCanExecuteChanged();
             }
         }
-        
+
         public BitmapSource PreviewImage
         {
             get => _previewImage;
@@ -64,7 +64,7 @@ namespace XamlRichMenuMaker
         public DelegateCommand DeleteRichMenuCommand { get; }
         public DelegateCommand LinkToUserCommand { get; }
         public DelegateCommand UnlinkFromUserCommand { get; }
-        
+
         public MainWindowViewModel(string channelAccessToken, string userId)
         {
             if (_line == null) { _line = new LineMessagingClient(channelAccessToken); }
@@ -88,16 +88,16 @@ namespace XamlRichMenuMaker
 
         }
 
-        public async Task GetRichMenuListAsync(IList<ResponseRichMenu> richMenuList)
-        { 
+        public async Task GetRichMenuListAsync(IList<ResponseRichMenu> richMenuList, string newRichMenuId)
+        {
             if (richMenuList != null)
             {
                 _newRichMenus = richMenuList;
             }
             var menus = await _line.GetRichMenuListAsync();
-            
+
             RichMenus = _newRichMenus.Concat(menus).ToList();
-            SelectedRichMenu = RichMenus[0];
+            SelectedRichMenu = RichMenus.FirstOrDefault(m => m.RichMenuId == newRichMenuId) ?? RichMenus[0];
         }
 
         private async Task<Stream> GetRichMenuImageStream()
@@ -165,12 +165,13 @@ namespace XamlRichMenuMaker
 
         private bool IsNewItemSelected()
         {
-            if ((SelectedRichMenu == null) || (RichMenus == null) || (_newRichMenus==null))
+            if ((SelectedRichMenu == null) || (RichMenus == null) || (_newRichMenus == null))
             {
                 return false;
             }
-            foreach (var menu in _newRichMenus) {
-                if( SelectedRichMenu == menu) { return true; }
+            foreach (var menu in _newRichMenus)
+            {
+                if (SelectedRichMenu == menu) { return true; }
             }
             return false;
         }
@@ -187,7 +188,7 @@ namespace XamlRichMenuMaker
                 await _line.UploadRichMenuPngImageAsync(stream, menuId);
             }
 
-            await GetRichMenuListAsync(null);
+            await GetRichMenuListAsync(null, menuId);
         }
 
         private async Task DeleteRichMenuAsync()
@@ -196,7 +197,7 @@ namespace XamlRichMenuMaker
 
             await _line.DeleteRichMenuAsync(SelectedRichMenu.RichMenuId);
 
-            await GetRichMenuListAsync(null);
+            await GetRichMenuListAsync(null, null);
         }
 
         private Task LinkToUserAsync() => _line.LinkRichMenuToUserAsync(_userId, SelectedRichMenu.RichMenuId);

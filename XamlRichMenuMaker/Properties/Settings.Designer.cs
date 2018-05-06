@@ -25,9 +25,7 @@ namespace XamlRichMenuMaker.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("zd1O6SNqTN8duuo14Zu/zGzJ6LZkpB8aENmUhc45T1b3wQHqESRPJI81Y3MKWO1xD9OclfSRx5gYgRhMm" +
-            "vmcG/ytzsnOb4SanJL4jLxJtZvXxKpvs6G7nAQywXkJl6XT8ytN5xWqyGDUWvsph0nxIQdB04t89/1O/" +
-            "w1cDnyilFU=\r\n")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Set the channel access token")]
         public string ChannelAccessToken {
             get {
                 return ((string)(this["ChannelAccessToken"]));
@@ -36,7 +34,7 @@ namespace XamlRichMenuMaker.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("U28aa279ed62b3e495b0f9d88f5a4afc2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Set the debug user ID")]
         public string UserId {
             get {
                 return ((string)(this["UserId"]));

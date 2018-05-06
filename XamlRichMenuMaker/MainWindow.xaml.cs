@@ -31,9 +31,10 @@ namespace XamlRichMenuMaker
             var richMenus = new List<ResponseRichMenu>();
             foreach (var file in Directory.EnumerateFiles("RichMenuDefs", "*.xaml"))
             {
+                if (Path.GetFileName(file) == "__template.xaml") { continue; }
                 using (var stream = new FileStream(file, FileMode.Open, FileAccess.Read))
                 {
-                    
+
                     var ctrl = XamlReader.Load(stream) as RichMenuDefsControl;
                     richMenuDefs.Children.Clear();
                     richMenuDefs.Children.Add(ctrl);
@@ -41,11 +42,11 @@ namespace XamlRichMenuMaker
                     var (newRichMenu, renderBmp) = ctrl.RenderingRichMenu();
                     var fileName = Path.GetFileNameWithoutExtension(file);
                     richMenus.Add(new ResponseRichMenu(fileName, newRichMenu));
-                    VM.SaveRichMenuImage(renderBmp,fileName);
+                    VM.SaveRichMenuImage(renderBmp, fileName);
 
                 }
             }
-            await VM.GetRichMenuListAsync(richMenus);
+            await VM.GetRichMenuListAsync(richMenus, null);
             richMenuDefs.Visibility = Visibility.Collapsed;
         }
 

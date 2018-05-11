@@ -18,8 +18,8 @@ namespace XamlRichMenuMaker
         public MainWindow()
         {
             InitializeComponent();
-            var accessToken = Properties.Settings.Default.ChannelAccessToken;
-            var userId = Properties.Settings.Default.UserId;
+            var accessToken = (string)Application.Current.Properties["ChannelAccessToken"];
+            var userId = (string)Application.Current.Properties["UserId"];
             DataContext = new MainWindowViewModel(accessToken, userId);
         }
 

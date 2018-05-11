@@ -17,7 +17,7 @@
                   Height="{StaticResource RichMenuShortHeight}" >
 
         <!-- Rich Menu Definitions -->
-        <Grid x:Name="menu_body" Background="LightGray">
+        <Grid x:Name="menu_body" Background="#FFF0F0F0">
             <local:RichMenuProperties.Settings>
                 <local:RichMenuSettings Name="UnlinkMenu" ChatBarText="サービス連携" Selected="True"/>
             </local:RichMenuProperties.Settings>

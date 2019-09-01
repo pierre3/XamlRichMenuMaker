@@ -18,10 +18,10 @@
                       ItemsSource="{Binding RichMenus}" DisplayMemberPath="RichMenuId"
                       SelectedItem="{Binding SelectedRichMenu}"
                       SelectionChanged="ComboBox_SelectionChanged" />
-
-            <Button Margin="2,4" Padding="4.2" Command="{Binding DeleteRichMenuCommand}" Content="Delete Rich Menu"/>
+            <Button Margin="2,4" Padding="4.2" Command="{Binding SetDefaultRitchMenuCommand}" Content="Set Default Ritch Menu"/>
             <Button Margin="2,4" Padding="4.2" Command="{Binding LinkToUserCommand}" Content="Link to User"/>
             <Button Margin="2,4" Padding="4.2" Command="{Binding UnlinkFromUserCommand}" Content="Unlink from User"/>
+            <Button Margin="2,4" Padding="4.2" Command="{Binding DeleteRichMenuCommand}" Content="Delete Rich Menu"/>
         </StackPanel>
 
         <Grid Grid.Row="1">

@@ -5,11 +5,9 @@ using Newtonsoft.Json.Serialization;
 using Prism.Commands;
 using Prism.Mvvm;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
 namespace XamlRichMenuMaker
@@ -64,6 +62,7 @@ namespace XamlRichMenuMaker
         public DelegateCommand DeleteRichMenuCommand { get; }
         public DelegateCommand LinkToUserCommand { get; }
         public DelegateCommand UnlinkFromUserCommand { get; }
+        public DelegateCommand SetDefaultRitchMenuCommand { get; }
 
         public MainWindowViewModel(string channelAccessToken, string userId)
         {
@@ -78,15 +77,17 @@ namespace XamlRichMenuMaker
                 ContractResolver = new CamelCasePropertyNamesContractResolver(),
                 NullValueHandling = NullValueHandling.Ignore
             };
-            _jsonSerializerSettings.Converters.Add(new StringEnumConverter { CamelCaseText = true });
+            _jsonSerializerSettings.Converters.Add(new StringEnumConverter { NamingStrategy= new CamelCaseNamingStrategy() });
 
             RichMenus = new List<ResponseRichMenu>();
             CreateRichMenuCommand = new DelegateCommand(async () => await CreateRichMenuAsync(), () => IsNewItemSelected());
             DeleteRichMenuCommand = new DelegateCommand(async () => await DeleteRichMenuAsync(), () => !IsNewItemSelected());
             LinkToUserCommand = new DelegateCommand(async () => await LinkToUserAsync(), () => !IsNewItemSelected());
             UnlinkFromUserCommand = new DelegateCommand(async () => await UnlinkFromUserAsync(), () => !IsNewItemSelected());
-
+            SetDefaultRitchMenuCommand = new DelegateCommand(async () => await SetDefaultRichMenuAsync(), () => !IsNewItemSelected());
         }
+
+        private async Task SetDefaultRichMenuAsync() => await _line.SetDefaultRichMenuAsync(SelectedRichMenu.RichMenuId);
 
         public async Task GetRichMenuListAsync(IList<ResponseRichMenu> richMenuList, string newRichMenuId)
         {
@@ -210,6 +211,7 @@ namespace XamlRichMenuMaker
             DeleteRichMenuCommand.RaiseCanExecuteChanged();
             LinkToUserCommand.RaiseCanExecuteChanged();
             UnlinkFromUserCommand.RaiseCanExecuteChanged();
+            SetDefaultRitchMenuCommand.RaiseCanExecuteChanged();
         }
 
     }

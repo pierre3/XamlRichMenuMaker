@@ -12,4 +12,11 @@
   <TemplateContent>
     <ProjectItem SubType="Designer" ItemType="Content" TargetFileName="$fileinputname$.xaml" ReplaceParameters="true">__template.xaml</ProjectItem>
   </TemplateContent>
+  <WizardExtension>
+    <!-- アセンブリ名とバージョン、言語、確認したトークンを入れる -->
+    <Assembly>XRMMTemplateWizard, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=fa1c79bb5594a111</Assembly>
+    <!-- IWizardを継承したエントリクラスを名前空間込みで入れる -->
+    <FullClassName>XRMMTemplateWizard.XRMMTemplateWizard</FullClassName>
+  </WizardExtension>
+  
 </VSTemplate>

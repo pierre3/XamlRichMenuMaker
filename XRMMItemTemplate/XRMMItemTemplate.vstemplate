@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>RitchMenuTemplate</Name>
+    <Description>Ritch-menu definition file (XAML)</Description>
+    <Icon>XRMMItemTemplate.ico</Icon>
+    <TemplateID>1d7f238e-d58d-4bf1-bd73-9056d616a657</TemplateID>
+    <ProjectType>CSharp</ProjectType>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>RitchMenuTemplate.xaml</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem SubType="Designer" ItemType="Content" TargetFileName="$fileinputname$.xaml" ReplaceParameters="true">__template.xaml</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

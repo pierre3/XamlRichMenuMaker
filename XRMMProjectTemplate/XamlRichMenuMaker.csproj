@@ -32,13 +32,9 @@
     <Resource Include="Resources\web.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Content Include="RichMenuDefs\LinkMenu.xaml">
+    <Content Include="RichMenuDefs\SampleMenu.xaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="RichMenuDefs\UnlinkMenu.xaml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="RichMenuDefs\__template.xaml" />
   </ItemGroup>
 
   <ItemGroup>

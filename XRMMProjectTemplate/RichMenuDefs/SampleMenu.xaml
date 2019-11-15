@@ -31,23 +31,23 @@
             <Rectangle x:Name="area_1"
                     Stroke="DarkGray" StrokeThickness="4">
                 <local:RichMenuProperties.Action>
-                    <local:RichMenuAction Type="Postback" Label="Account Link" Data="account link" Text="アカウント連携"/>
+                    <local:RichMenuAction Type="Postback" Label="Hello!" Data="Hello!" Text="Hello! LINE BOT!"/>
                 </local:RichMenuProperties.Action>
             </Rectangle>
-            <Image Source="../Resources/link.png"
+            <Image Source="../Resources/cat.png"
                        VerticalAlignment="Top"
                        Margin="0,150,0,0" Width="420" Height="420"/>
             <TextBlock Margin="0,0,0,80" VerticalAlignment="Bottom" 
                            HorizontalAlignment="Center" 
                            FontSize="80">
-                    Webサービスのアカウントと連携する
+                    Hello! LINE BOT!
             </TextBlock>
 
             <!-- Action Area 2 -->
             <Rectangle Grid.Column="1" x:Name="area_2"
                     Stroke="DarkGray" StrokeThickness="4">
                 <local:RichMenuProperties.Action>
-                    <local:RichMenuAction Type="Uri" Label="Web Sites" Uri="https://lineaccountlinkapp.azurewebsites.net"/>
+                    <local:RichMenuAction Type="Uri" Label="Web Site" Uri="https://developers.line.biz/en/docs/messaging-api/using-rich-menus/"/>
                 </local:RichMenuProperties.Action>
             </Rectangle>
             <Image Grid.Column="1"  Source="../Resources/web.png"
@@ -55,7 +55,7 @@
                        Margin="236.333,180,237,0" Width="360" Height="360"/>
             <TextBlock Grid.Column="1" Margin="0,0,0,80" VerticalAlignment="Bottom" 
                            HorizontalAlignment="Center" 
-                           FontSize="80">Webサイト
+                           FontSize="80">Web Site
             </TextBlock>
         </Grid>
     </Grid>

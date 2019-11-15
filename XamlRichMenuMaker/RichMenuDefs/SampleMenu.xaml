@@ -19,60 +19,43 @@
         <!-- Rich Menu Definitions -->
         <Grid x:Name="menu_body" Background="#FFF0F0F0">
             <local:RichMenuProperties.Settings>
-                <local:RichMenuSettings Name="UnlinkMenu" ChatBarText="サービス連携" Selected="True"/>
+                <local:RichMenuSettings Name="accountLinkMenu" ChatBarText="サービス連携" Selected="True"/>
             </local:RichMenuProperties.Settings>
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition/>
-                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
             <!-- Action Area 1 -->
-            <Rectangle Grid.Column="0" x:Name="area_1"
+            <Rectangle x:Name="area_1"
                     Stroke="DarkGray" StrokeThickness="4">
                 <local:RichMenuProperties.Action>
-                    <local:RichMenuAction Type="Postback" Label="get user info" Data="API(UserInfo)"  Text="ユーザー情報確認"/>
+                    <local:RichMenuAction Type="Postback" Label="Hello!" Data="Hello!" Text="Hello! LINE BOT!"/>
                 </local:RichMenuProperties.Action>
             </Rectangle>
-            <Image Grid.Column="0"  Source="../Resources/userinfo.png"
+            <Image Source="../Resources/cat.png"
                        VerticalAlignment="Top"
                        Margin="0,150,0,0" Width="420" Height="420"/>
-            <TextBlock Grid.Column="0"  Margin="0,0,0,80" VerticalAlignment="Bottom" 
+            <TextBlock Margin="0,0,0,80" VerticalAlignment="Bottom" 
                            HorizontalAlignment="Center" 
                            FontSize="80">
-                    ユーザー情報確認
+                    Hello! LINE BOT!
             </TextBlock>
-            
+
             <!-- Action Area 2 -->
             <Rectangle Grid.Column="1" x:Name="area_2"
                     Stroke="DarkGray" StrokeThickness="4">
                 <local:RichMenuProperties.Action>
-                    <local:RichMenuAction Type="Postback" Label="Unlink" Data="Unlink" Text="解除"/>
+                    <local:RichMenuAction Type="Uri" Label="Web Site" Uri="https://developers.line.biz/en/docs/messaging-api/using-rich-menus/"/>
                 </local:RichMenuProperties.Action>
             </Rectangle>
-            <Image Grid.Column="1" Source="../Resources/unlink.png"
+            <Image Grid.Column="1"  Source="../Resources/web.png"
                        VerticalAlignment="Top"
-                       Margin="153,200,152.333,0" Width="320" Height="320"/>
-            <TextBlock Grid.Column="1" Margin="0,0,0,90" VerticalAlignment="Bottom" 
+                       Margin="236.333,180,237,0" Width="360" Height="360"/>
+            <TextBlock Grid.Column="1" Margin="0,0,0,80" VerticalAlignment="Bottom" 
                            HorizontalAlignment="Center" 
-                           FontSize="60">
-                    アカウント連携解除
-            </TextBlock>
-
-            <!-- Action Area 3 -->
-            <Rectangle Grid.Column="2" x:Name="area_3"
-                    Stroke="DarkGray" StrokeThickness="4">
-                <local:RichMenuProperties.Action>
-                    <local:RichMenuAction Type="Uri" Label="Web Sites" Uri="https://lineaccountlinkapp.azurewebsites.net"/>
-                </local:RichMenuProperties.Action>
-            </Rectangle>
-            <Image Grid.Column="2"  Source="../Resources/web.png"
-                       VerticalAlignment="Top"
-                       Margin="152.667,200,152,0" Width="320" Height="320"/>
-            <TextBlock Grid.Column="2" Margin="0,0,0,80" VerticalAlignment="Bottom" 
-                           HorizontalAlignment="Center" 
-                           FontSize="80">Webサイト
+                           FontSize="80">Web Site
             </TextBlock>
         </Grid>
     </Grid>

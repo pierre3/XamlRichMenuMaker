@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,17 +15,23 @@ namespace XamlRichMenuMaker
     /// </summary>
     public partial class App : Application
     {
+        public static AppSettings Settings { get; private set; }
+
         protected override void OnStartup(StartupEventArgs e)
         {
-            if(e.Args.Length < 2)
-            {
-                throw new ArgumentException("Command line arguments \"channel access token\" and \"debug user ID\" are required.");
-            }
-
-            Properties.Add("ChannelAccessToken", e.Args[0]);
-            Properties.Add("UserId", e.Args[1]);
-
+            var configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .Build();
+            Settings = configuration.GetSection("AppSettings").Get<AppSettings>();
+            
             base.OnStartup(e);
         }
+        public class AppSettings
+        {
+            public string ChannelAccessToken { get; set; }
+            public string DebugUserId { get; set; }
+        }
     }
+    
 }

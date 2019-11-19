@@ -2,8 +2,8 @@
 <VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
   <TemplateData>
     <TemplateID>7f44d369-5d06-4202-a4dc-4285f6fa6358</TemplateID>
-    <Name>XamlRichMenuMaker</Name>
-    <Description>A rich-menu creation tool for LINE chat bot, which designs rich-menus using XAML.</Description>
+    <Name>LINE Ritch Menu Maker</Name>
+    <Description>A rich menu creation tool for LINE chat bot, which designs rich menus using XAML.</Description>
     <ProjectType>CSharp</ProjectType>
     <LanguageTag>csharp</LanguageTag>
     <SortOrder>1000</SortOrder>
@@ -19,14 +19,13 @@
     <TemplateContent>
       <Project TargetFileName="XamlRichMenuMaker.csproj" File="XamlRichMenuMaker.csproj" ReplaceParameters="true">
         <Folder Name="Resources" TargetFolderName="Resources">
-          <ProjectItem ReplaceParameters="false" TargetFileName="link.png">link.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="Unlink.png">Unlink.png</ProjectItem>
-          <ProjectItem ReplaceParameters="false" TargetFileName="userInfo.png">userInfo.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="cat.png">cat.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="web.png">web.png</ProjectItem>
         </Folder>
         <Folder Name="RichMenuDefs" TargetFolderName="RichMenuDefs">
           <ProjectItem ReplaceParameters="false" TargetFileName="SampleMenu.xaml">SampleMenu.xaml</ProjectItem>
         </Folder>
+        <ProjectItem ReplaceParameters="false" TargetFileName="appsettings.json">appsettings.json</ProjectItem>
         <ProjectItem ReplaceParameters="false" TargetFileName="App.xaml">App.xaml</ProjectItem>
         <ProjectItem ReplaceParameters="false" TargetFileName="App.xaml.cs">App.xaml.cs</ProjectItem>
         <ProjectItem ReplaceParameters="false" TargetFileName="MainWindow.xaml">MainWindow.xaml</ProjectItem>

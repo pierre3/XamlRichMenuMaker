@@ -20,7 +20,8 @@ namespace XRMMTemplateWizard
 
         public void ProjectItemFinishedGenerating(ProjectItem projectItem)
         {
-            projectItem.Properties.Item("CopyToOutputDirectory").Value = 1;            
+            projectItem.Properties.Item("ItemType").Value = "Content";
+            projectItem.Properties.Item("CopyToOutputDirectory").Value = (uint)1;
         }
 
         public void RunFinished()

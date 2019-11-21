@@ -19,7 +19,7 @@
         <!-- Rich Menu Definitions -->
         <Grid x:Name="menu_body" Background="#FFF0F0F0">
             <local:RichMenuProperties.Settings>
-                <local:RichMenuSettings Name="accountLinkMenu" ChatBarText="サービス連携" Selected="True"/>
+                <local:RichMenuSettings Name="sampleMenu" ChatBarText="Menu" Selected="True"/>
             </local:RichMenuProperties.Settings>
 
             <Grid.ColumnDefinitions>
